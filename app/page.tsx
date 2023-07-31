@@ -90,7 +90,7 @@ export default function Home() {
 
       <section className="flex flex-col xl:flex-row items-center gap-x-24 mt-10 xl:mt-24">
         <div className="p-8 rounded-lg bg-slate-100">
-          <h2 className="text-lg font-bold text-center xl:text-tight">
+          <h2 className="text-lg font-bold text-center xl:text-right">
             نکات قابل توجه مشتریان:
           </h2>
           <div className="flex flex-col gap-y-2 mt-6">
@@ -98,7 +98,7 @@ export default function Home() {
               <span className="text-red-600 text-lg">
                 <GoAlertFill />
               </span>
-              <h3>احراز هویت</h3>
+              <h3 className="font-medium">احراز هویت</h3>
             </div>
             <p className="text-sm text-gray-500 text-center sm:text-right">
               متقاضي محترم، شماره تلفن همراه معرفي شده در زمان ثبت نام حتما بايد
@@ -110,7 +110,7 @@ export default function Home() {
               <span className="text-violet-600 text-lg">
                 <IoIosAlert />
               </span>
-              <h3>پاسخگویی به سوالات شما</h3>
+              <h3 className="font-medium">پاسخگویی به سوالات شما</h3>
             </div>
             <p className="text-sm text-gray-500 text-center sm:text-right">
               مشتري محترم گروه صنعتي ايران خودرو شماره تلفن
@@ -126,7 +126,7 @@ export default function Home() {
               <span className="text-green-600 text-lg">
                 <AiFillPlusCircle />
               </span>
-              <h3>ثبت نام</h3>
+              <h3 className="font-medium">ثبت نام</h3>
             </div>
             <p className="text-sm text-gray-500 text-center sm:text-right">
               مشتری گرامی با توجه به تغيير روال ثبت اطلاعات مشتریان (ورود کاربر)
