@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <div className="container mx-auto mt-5">
-      <div className="flex items-center justify-between border mx-5 rounded-md px-5 py-2">
+      <div className="flex items-center justify-between border mx-5 xl:mx-0 rounded-md px-5 py-2">
         <Image
           src={"/assets/images/Iran-Khodro-Logo.png"}
           alt="Iran-Khodro-Logo.png"

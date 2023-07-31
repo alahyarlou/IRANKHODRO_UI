@@ -50,10 +50,10 @@ const carsImages = [
 ];
 export default function Home() {
   return (
-    <section>
+    <section className="mx-5 xl:mx-0">
       <Swiper
         modules={[Pagination, A11y, Autoplay]}
-        className="my-6 rounded-md w-full h-[400px]"
+        className="my-6 rounded-md w-full h-[300px] xl:h-[400px]"
         spaceBetween={50}
         slidesPerView={1}
         pagination={{ clickable: true }}
@@ -65,6 +65,7 @@ export default function Home() {
             alt="slide 01"
             width={2000}
             height={1000}
+            className="object-cover h-full"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -73,6 +74,7 @@ export default function Home() {
             alt="slide 02"
             width={2000}
             height={1000}
+            className="object-cover h-full"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -81,13 +83,16 @@ export default function Home() {
             alt="slide 03"
             width={2000}
             height={2000}
+            className="object-cover h-full"
           />
         </SwiperSlide>
       </Swiper>
 
-      <section className="flex items-center gap-x-24 mt-24">
+      <section className="flex flex-col xl:flex-row items-center gap-x-24 mt-10 xl:mt-24">
         <div className="p-8 rounded-lg bg-slate-100">
-          <h2 className="text-lg font-bold">نکات قابل توجه مشتریان:</h2>
+          <h2 className="text-lg font-bold text-center xl:text-tight">
+            نکات قابل توجه مشتریان:
+          </h2>
           <div className="flex flex-col gap-y-2 mt-6">
             <div className="flex items-center gap-x-2">
               <span className="text-red-600 text-lg">
@@ -95,7 +100,7 @@ export default function Home() {
               </span>
               <h3>احراز هویت</h3>
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 text-center sm:text-right">
               متقاضي محترم، شماره تلفن همراه معرفي شده در زمان ثبت نام حتما بايد
               به نام شما باشد.
             </p>
@@ -107,7 +112,7 @@ export default function Home() {
               </span>
               <h3>پاسخگویی به سوالات شما</h3>
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 text-center sm:text-right">
               مشتري محترم گروه صنعتي ايران خودرو شماره تلفن
               <span className="font-bold mx-1 text-gray-800">
                 82272727 -021
@@ -123,7 +128,7 @@ export default function Home() {
               </span>
               <h3>ثبت نام</h3>
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 text-center sm:text-right">
               مشتری گرامی با توجه به تغيير روال ثبت اطلاعات مشتریان (ورود کاربر)
               جهت کلیه امور مرتبط با میزکار خود می بایست از لینک
               <br />
@@ -134,7 +139,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-y-5">
+        <div className="flex flex-col mt-16 xl:mt-0 items-center justify-center gap-y-5">
           <h2 className="font-bold text-lg">نیاز به راهنمایی دارید؟</h2>
           <span className="text-7xl">
             <AiOutlineQuestionCircle />
@@ -161,7 +166,7 @@ export default function Home() {
             اختصاصی خودرو مشاهده کنید.
           </p>
         </div>
-        <div className="grid grid-cols-4 gap-5 mt-20 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-20 mb-10">
           {carsImages.map((item, index) => (
             <div
               key={index}
@@ -172,13 +177,13 @@ export default function Home() {
                 alt={item.title}
                 width={150}
                 height={150}
-                className="hover:scale-125 transition-all duration-300 ease-in-out mb-3 hover:cursor-pointer"
+                className="mb-6 xl:mb-3 hover:scale-125 hover:cursor-pointer transition-all duration-300 ease-in-out"
               />
               <h2 className="font-medium absolute bottom-3">{item.title}</h2>
             </div>
           ))}
         </div>
-        <button className="bg-blue-700 text-white px-6 py-2 rounded-md mb-24 mx-auto flex items-center justify-center gap-x-2">
+        <button className="bg-blue-700 text-sm text-white px-6 py-2 rounded-md mb-24 mx-auto flex items-center justify-center gap-x-2">
           <AiOutlineEye />
           مشاهده خودرو های بیشتر
         </button>
