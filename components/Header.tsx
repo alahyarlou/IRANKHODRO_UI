@@ -39,14 +39,14 @@ const Header = () => {
 
   return (
     <div className="container mx-auto mt-5">
-      <div className="flex items-center justify-between border rounded-md px-6 py-2">
+      <div className="flex items-center justify-between border mx-5 rounded-md px-5 py-2">
         <Image
           src={"/assets/images/Iran-Khodro-Logo.png"}
           alt="Iran-Khodro-Logo.png"
           width={100}
           height={100}
         />
-        <ul className="flex items-center gap-x-7">
+        <ul className="hidden xl:flex items-center gap-x-7">
           {headerURL.map((item) => (
             <li
               key={item.id}
@@ -63,7 +63,7 @@ const Header = () => {
         </ul>
         <button className="flex items-center gap-x-2 rounded-md border px-4 py-3">
           <HiOutlineUser />
-          <span>ورود / ثبت نام</span>
+          <span className="hidden sm:inline-block">ورود / ثبت نام</span>
         </button>
       </div>
     </div>

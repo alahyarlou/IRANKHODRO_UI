@@ -15,8 +15,8 @@ const Footer = () => {
           width={200}
           height={200}
         />
-        <div className="flex gap-x-10 justify-between border-t mt-5 pt-5">
-          <ul className="flex flex-col gap-y-4 list-disc">
+        <div className="flex flex-col lg:flex-row gap-y-10 gap-x-16 xl:gap-x-10 justify-between border-t mt-5 pt-5">
+          <ul className="flex flex-col items-center lg:items-start gap-y-4 list-disc">
             <li className="font-bold text-blue-700">ارتباط با ما</li>
             <li className="flex items-start gap-x-2 text-gray-500">
               <span className="flex-shrink-0 text-gray-400">
@@ -50,7 +50,7 @@ const Footer = () => {
               <span className="text-sm">ایمیل: info@ikco.ir</span>
             </li>
           </ul>
-          <ul className="flex flex-col gap-y-4 list-disc">
+          <ul className="flex flex-col items-center lg:items-start gap-y-4 list-disc">
             <li className="font-bold text-blue-700">مطالب مرتبط</li>
             <li className="flex items-start gap-x-2 text-gray-500 text-sm">
               ثبت نظرات و شکایات (درخصوص عملکرد سایت)
@@ -74,7 +74,7 @@ const Footer = () => {
               قوانین و مقررات
             </li>
           </ul>
-          <ul className="flex flex-col gap-y-4 list-disc">
+          <ul className="flex flex-col items-center lg:items-start gap-y-4 list-disc">
             <li className="font-bold text-blue-700">نماد اعتماد</li>
             <li className="list-none">
               <Image

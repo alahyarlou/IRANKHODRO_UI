@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body>
         <Header />
-        <main className="container mx-auto">{children}</main>
+        <main className="container mx-auto hidden">{children}</main>
         <Footer />
       </body>
     </html>
