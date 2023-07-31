@@ -21,3 +21,14 @@
 body {
   font-family: "IRANSansX", sans-serif;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+}
+.swiper-pagination-bullet {
+  background-color: #d4d4d4 !important;
+}
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+}
