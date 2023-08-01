@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -20,7 +21,10 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className="bg-slate-50">
         <Header />
-        <main className="container mx-auto min-h-screen">{children}</main>
+        <main className="container mx-auto min-h-screen">
+          {children}
+          <Analytics />
+        </main>
         <Footer />
       </body>
     </html>
