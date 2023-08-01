@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 // navigation
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 // icons
 import {
   HiOutlineUser,
@@ -44,6 +44,7 @@ const headerURL: { id: number; title: string; path: string }[] = [
 const Header = () => {
   const pathname = usePathname();
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
+  const router = useRouter();
   return (
     <>
       <Sidebar
@@ -91,7 +92,10 @@ const Header = () => {
             </button>
           </div>
           <div className="flex flex-col sm:flex-row gap-y-3 lg:hidden sm:items-center justify-center gap-x-6">
-            <button className="flex flex-1 items-center justify-center gap-x-2 bg-slate-100 text-slate-700 font-medium px-10 py-2 rounded-md">
+            <button
+              onClick={() => router.push("/car-purchase")}
+              className="flex flex-1 items-center justify-center gap-x-2 bg-slate-100 text-slate-700 font-medium px-10 py-2 rounded-md"
+            >
               <span className="text-xl">
                 <BsCarFrontFill />
               </span>

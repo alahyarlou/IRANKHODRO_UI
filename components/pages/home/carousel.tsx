@@ -22,12 +22,17 @@ const swiperSidle: SwiperSilderProps[] = [
   {
     id: 2,
     path: "/assets/images/slide_02.jpg",
-    title: "slide 01",
+    title: "slide 02",
   },
   {
     id: 3,
     path: "/assets/images/slide_03.jpg",
-    title: "slide 01",
+    title: "slide 03",
+  },
+  {
+    id: 4,
+    path: "/assets/images/slide_04.jpg",
+    title: "slide 04",
   },
 ];
 
@@ -48,6 +53,7 @@ const Carousel: React.FC = () => {
             alt={item.title}
             width={2000}
             height={1000}
+            quality={50}
             className="object-cover h-full w-full"
           />
         </SwiperSlide>
