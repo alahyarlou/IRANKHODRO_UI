@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-// icons
 import { GoAlertFill } from "react-icons/go";
 import { IoIosAlert } from "react-icons/io";
 import { BsDownload } from "react-icons/bs";
@@ -9,7 +8,6 @@ import {
   AiOutlineEye,
   AiOutlineQuestionCircle,
 } from "react-icons/ai";
-// components
 import Carousel from "@/components/pages/home/carousel";
 
 const carsImages: { title: string; path: string }[] = [
@@ -48,6 +46,23 @@ const carsImages: { title: string; path: string }[] = [
 ];
 
 export default function Home() {
+  const renderCarImages = () => {
+    return carsImages.map((item, index) => (
+      <div
+        key={index}
+        className="bg-slate-100 rounded-md flex flex-col items-center justify-center p-4 relative"
+      >
+        <Image
+          src={item.path}
+          alt={item.title}
+          width={150}
+          height={150}
+          className="mb-6 xl:mb-3 hover:scale-125 hover:cursor-pointer transition-all duration-300 ease-in-out"
+        />
+        <h2 className="font-medium absolute bottom-3">{item.title}</h2>
+      </div>
+    ));
+  };
   return (
     <section className="sm:mx-4">
       <Carousel />
@@ -128,21 +143,7 @@ export default function Home() {
           </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-10 mx-4 sm:mx-0">
-          {carsImages.map((item, index) => (
-            <div
-              key={index}
-              className="bg-slate-100 rounded-md flex flex-col items-center justify-center p-4 relative"
-            >
-              <Image
-                src={item.path}
-                alt={item.title}
-                width={150}
-                height={150}
-                className="mb-6 xl:mb-3 hover:scale-125 hover:cursor-pointer transition-all duration-300 ease-in-out"
-              />
-              <h2 className="font-medium absolute bottom-3">{item.title}</h2>
-            </div>
-          ))}
+          {renderCarImages()}
         </div>
         <button className="bg-blue-700 mt-10 text-sm text-white px-6 py-2 rounded-md mb-16 mx-auto flex items-center justify-center gap-x-2">
           <AiOutlineEye />

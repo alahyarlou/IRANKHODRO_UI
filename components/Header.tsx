@@ -1,11 +1,8 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// navigation
 import { usePathname, useRouter } from "next/navigation";
-// icons
 import {
   HiOutlineUser,
   HiOutlineMenuAlt3,
@@ -45,6 +42,25 @@ const Header = () => {
   const pathname = usePathname();
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const router = useRouter();
+
+  const handleSidebarToggle = () => {
+    setShowSidebar(!showSidebar);
+  };
+
+  const renderHeaderLinks = () => {
+    return headerURL.map((item) => (
+      <li
+        key={item.id}
+        className={`transition-all duration-300 ease-in-out ${
+          pathname === item.path
+            ? "font-bold underline underline-offset-[14px] text-blue-700"
+            : "text-gray-500"
+        }`}
+      >
+        <Link href={item.path}>{item.title}</Link>
+      </li>
+    ));
+  };
   return (
     <>
       <Sidebar
@@ -58,7 +74,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <button
               className="lg:hidden text-2xl"
-              onClick={() => setShowSidebar(!showSidebar)}
+              onClick={handleSidebarToggle}
             >
               <HiOutlineMenuAlt3 />
             </button>
@@ -72,19 +88,7 @@ const Header = () => {
               <HiOutlineSearch />
             </button>
             <ul className="hidden lg:flex items-center gap-x-7">
-              {headerURL.map((item) => (
-                <li
-                  key={item.id}
-                  className={`transition-all duration-300 ease-in-out 
-              ${
-                pathname === item.path
-                  ? "font-bold underline underline-offset-[14px] text-blue-700"
-                  : "text-gray-500"
-              }`}
-                >
-                  <Link href={item.path}>{item.title}</Link>
-                </li>
-              ))}
+              {renderHeaderLinks()}
             </ul>
             <button className="hidden lg:flex items-center gap-x-2 rounded-md border px-4 py-3">
               <HiOutlineUser />

@@ -1,5 +1,4 @@
 import Image from "next/image";
-// icons
 import { HiOutlineLocationMarker, HiOutlinePhone } from "react-icons/hi";
 import { BiSupport } from "react-icons/bi";
 import { MdOutlineAlternateEmail } from "react-icons/md";
@@ -51,28 +50,22 @@ const Footer = () => {
             </li>
           </ul>
           <ul className="flex flex-col gap-y-4 list-disc mr-4 lg:mr-0">
-            <li className="font-bold text-blue-700 text-lg list-none">مطالب مرتبط</li>
+            <li className="font-bold text-blue-700 text-lg list-none">
+              مطالب مرتبط
+            </li>
             <li className="gap-x-2 text-gray-500 text-sm">
               ثبت نظرات و شکایات (درخصوص عملکرد سایت)
             </li>
-            <li className="text-gray-500 text-sm">
-              سوالات متداول
-            </li>
+            <li className="text-gray-500 text-sm">سوالات متداول</li>
             <li className="text-gray-500 text-sm">
               سایت گروه صنعتی ایران خودرو
             </li>
             <li className="text-gray-500 text-sm">
               اپليکيشن خدمات پس از فروش ايران خودرو
             </li>
-            <li className="text-gray-500 text-sm">
-              تماس با ما
-            </li>
-            <li className="text-gray-500 text-sm">
-              درباره ما
-            </li>
-            <li className="text-gray-500 text-sm">
-              قوانین و مقررات
-            </li>
+            <li className="text-gray-500 text-sm">تماس با ما</li>
+            <li className="text-gray-500 text-sm">درباره ما</li>
+            <li className="text-gray-500 text-sm">قوانین و مقررات</li>
           </ul>
           <ul className="flex flex-col gap-y-4">
             <li className="font-bold text-blue-700 text-lg">نماد اعتماد</li>
