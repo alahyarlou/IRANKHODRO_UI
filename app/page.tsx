@@ -1,10 +1,6 @@
 "use client";
 import Image from "next/image";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Pagination, A11y } from "swiper/modules";
+// icons
 import { GoAlertFill } from "react-icons/go";
 import { IoIosAlert } from "react-icons/io";
 import { BsDownload } from "react-icons/bs";
@@ -13,8 +9,10 @@ import {
   AiOutlineEye,
   AiOutlineQuestionCircle,
 } from "react-icons/ai";
+// components
+import Carousel from "@/components/pages/home/carousel";
 
-const carsImages = [
+const carsImages: { title: string; path: string }[] = [
   {
     title: "پژو۲۰۶ تیپ ۵",
     path: "/assets/images/206.png",
@@ -48,49 +46,14 @@ const carsImages = [
     path: "/assets/images/haymaS7.png",
   },
 ];
+
 export default function Home() {
   return (
-    <section className="mx-5 xl:mx-0">
-      <Swiper
-        modules={[Pagination, A11y, Autoplay]}
-        className="my-6 rounded-md w-full h-[300px] xl:h-[400px]"
-        spaceBetween={50}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3500, disableOnInteraction: false }}
-      >
-        <SwiperSlide>
-          <Image
-            src={"/assets/images/slide_01.jpg"}
-            alt="slide 01"
-            width={2000}
-            height={1000}
-            className="object-cover h-full"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={"/assets/images/slide_02.jpg"}
-            alt="slide 02"
-            width={2000}
-            height={1000}
-            className="object-cover h-full"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={"/assets/images/slide_03.jpg"}
-            alt="slide 03"
-            width={2000}
-            height={2000}
-            className="object-cover h-full"
-          />
-        </SwiperSlide>
-      </Swiper>
-
-      <section className="flex flex-col xl:flex-row items-center gap-x-24 mt-10 xl:mt-24">
-        <div className="p-8 rounded-lg bg-slate-100">
-          <h2 className="text-lg font-bold text-center xl:text-right">
+    <section className="sm:mx-4">
+      <Carousel />
+      <section className="flex flex-col lg:flex-row items-center justify-center gap-x-4 mt-5 lg:mt-16">
+        <div className="p-4 sm:rounded-lg bg-slate-100 ">
+          <h2 className="text-lg font-bold text-right">
             نکات قابل توجه مشتریان:
           </h2>
           <div className="flex flex-col gap-y-2 mt-6">
@@ -100,7 +63,7 @@ export default function Home() {
               </span>
               <h3 className="font-medium">احراز هویت</h3>
             </div>
-            <p className="text-sm text-gray-500 text-center sm:text-right">
+            <p className="text-sm text-gray-500 leading-6">
               متقاضي محترم، شماره تلفن همراه معرفي شده در زمان ثبت نام حتما بايد
               به نام شما باشد.
             </p>
@@ -112,10 +75,10 @@ export default function Home() {
               </span>
               <h3 className="font-medium">پاسخگویی به سوالات شما</h3>
             </div>
-            <p className="text-sm text-gray-500 text-center sm:text-right">
+            <p className="text-sm text-gray-500 leading-6">
               مشتري محترم گروه صنعتي ايران خودرو شماره تلفن
-              <span className="font-bold mx-1 text-gray-800">
-                82272727 -021
+              <span className="font-bold mx-2 text-gray-800">
+                82272727 - 021
               </span>
               در ايام طرح هاي فروش اينترنتي بطور 24 ساعته و شبانه روزي جهت
               پاسخگوئي به سئوالات و راهنمائي در خدمت شما مي باشد .
@@ -128,36 +91,34 @@ export default function Home() {
               </span>
               <h3 className="font-medium">ثبت نام</h3>
             </div>
-            <p className="text-sm text-gray-500 text-center sm:text-right">
+            <p className="text-sm text-gray-500 leading-6">
               مشتری گرامی با توجه به تغيير روال ثبت اطلاعات مشتریان (ورود کاربر)
               جهت کلیه امور مرتبط با میزکار خود می بایست از لینک
-              <br />
-              <span className="underline underline-offset-8 text-gray-800 mx-1">
+              <span className="underline underline-offset-8 text-gray-800 inline-block mx-1 font-semibold">
                 ثبت نام / تنظیم رمز
               </span>
               اقدام به تکمیل اطلاعات و تنظیم رمز نمایید.
             </p>
           </div>
         </div>
-        <div className="flex flex-col mt-16 xl:mt-0 items-center justify-center gap-y-5">
+        <div className="flex flex-col mt-5 xl:mt-0 items-center justify-center gap-y-5">
           <h2 className="font-bold text-lg">نیاز به راهنمایی دارید؟</h2>
           <span className="text-7xl">
             <AiOutlineQuestionCircle />
           </span>
-          <p className="text-center text-gray-500 text-sm">
+          <p className="text-center text-gray-500 text-sm mx-3 sm:mx-0">
             شما میتوانید از طریق فایل زیر، نحوه ثبت نام در سایت را مشاهده کنید:
           </p>
-          <button className="flex items-center gap-x-2 bg-blue-700 text-white px-6 py-2 rounded">
-            <span>
+          <button className="flex lg:flex-col xl:flex-row items-center gap-2 bg-blue-700 text-white px-6 py-2 rounded">
+            <span className="">
               <BsDownload />
             </span>
             <span>دریافت راهنمای ثبت نام در سایت</span>
           </button>
         </div>
       </section>
-
       <section className="w-full">
-        <div className="flex flex-col gap-y-3 mt-24">
+        <div className="flex flex-col gap-y-3 mt-16">
           <h1 className="text-xl font-bold underline underline-offset-8 text-blue-700 mx-auto">
             لیست خودروها
           </h1>
@@ -166,7 +127,7 @@ export default function Home() {
             اختصاصی خودرو مشاهده کنید.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-20 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-10 mx-4 sm:mx-0">
           {carsImages.map((item, index) => (
             <div
               key={index}
@@ -183,7 +144,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <button className="bg-blue-700 text-sm text-white px-6 py-2 rounded-md mb-24 mx-auto flex items-center justify-center gap-x-2">
+        <button className="bg-blue-700 mt-10 text-sm text-white px-6 py-2 rounded-md mb-16 mx-auto flex items-center justify-center gap-x-2">
           <AiOutlineEye />
           مشاهده خودرو های بیشتر
         </button>

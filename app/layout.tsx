@@ -17,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body>
+      <body className="bg-slate-50">
         <Header />
-        <main className="container mx-auto">{children}</main>
+        <main className="container mx-auto min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
